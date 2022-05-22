@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<div>
+
+            <form class="validate-form" , method = 'POST' action="{% url 'register' %}" >
+                {% csrf_token %}
+
+                <nav class="navbar navbar-dark bg-dark justify-content-between">
+                    <h2 class="navbar-brand">Register</h2>
+                  </nav>
+                  <h6> Enter new username</h6>
+                  
+                <div class="validate-input" data-validate = "username must be 4 to 8 character">
+                    <input  type="text" name="username" placeholder="username">
+                </div>
+                <h6> Enter password</h6>
+
+                <div class=" validate-input" data-validate = "Password is required">
+                    <input  type="password" name="password" placeholder="Password">
+                </div>
+                
+                <div type="submit" class="container-form-btn">
+                    <button class="form-btn btn-success btn-sm mt-3">
+                        Sign up
+                    </button>
+                </div>
+            </form>
+</div>
+
+{% endblock %}

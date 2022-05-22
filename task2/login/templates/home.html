@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content%}
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+    <h2 class="navbar-brand">HOME</h2>
+<a class="btn btn-success" href="{% url 'user_logout' %}" >logout</a></nav>
+<div class="text-center">
+<h1 class="  mt-5 btn-outline-danger" >Your at user home!</h1>
+{% comment %} <button type="submit" class="btn btn-success btn-block mb-4">admin </button> {% endcomment %}
+</div>
+{% endblock %}

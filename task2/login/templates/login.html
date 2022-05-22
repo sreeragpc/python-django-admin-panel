@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+  <h2 class="navbar-brand">Login</h2>
+</nav>
+
+<form action="{% url 'user_login' %}" method="POST" class="m-5">
+  <h6 class="text-danger">Login with your username and password !</h6>
+    <!-- Email input -->
+    {% csrf_token %}
+    <div class="mb-2">
+      <input type="text" id="form2Example" class="form-control" name="username" />
+      <label class="form-label" for="form2Example">Username</label>
+    </div>
+  
+    <!-- Password input -->
+    <div class="mb-2 ">
+      <input type="password" id="form2Example" class="form-control" name='password' />
+      <label class="form-label" for="form2Example">Password</label>
+    </div>
+    {% for x in messages %}
+    <p style="color:red">{{x}}</p>
+    {% endfor %}  
+    
+    <button type="submit" class="btn btn-success btn-block ">Sign in </button>
+    
+  
+  </form> <div class="ms-5">
+  <h6 class="text-danger"> click the button for user registraton</h6>
+   <a class="btn btn-success btn-block" href="{% url 'register' %}" >register</a></nav>
+  </div>
+{% endblock %}

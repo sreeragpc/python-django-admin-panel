@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+  <h2 class="navbar-brand">adminLogin</h2>
+</nav>
+
+
+
+<form method="POST" class="m-5">
+    {% csrf_token %}
+    <div class="mb-4">
+      <input type="text"  id="form2Example" class="form-control" name="username" />
+      <label class="form-label" for="form2Example">Username</label>
+    </div>
+    <div class="mb-4 ">
+      <input type="password" id="form2Example" class="form-control" name='password' />
+      <label class="form-label" for="form2Example">Password</label>
+    </div>
+    {% for x in messages %}
+    <p style="color:red">{{x}}</p>
+    {% endfor %}  
+    
+    <button type="submit" class="btn btn-success btn-block mb-4">Sign in </button>
+  
+  </form> 
+
+{% endblock %}

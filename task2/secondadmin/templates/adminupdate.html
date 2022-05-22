@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+    <h2 class="navbar-brand">adminUpdate</h2>
+  </nav>
+<div class="container">
+    <form class=" validate-form mt-3" , method = 'POST'  >
+                {% csrf_token %}
+                <h6>enter new username</h6>
+                <input type="text" name="username" value="{{user.username}}"/>
+                <h6>enter new password</h6>
+                <input type="password" name="password" />
+            
+                <div type="submit" class="container-form-btn">
+                    <button class="form-btn btn-success btn-sm mt-3">
+                        update
+                    </button>
+
+                </div>    
+    </form>
+</div>
+
+{% endblock %}
